@@ -7,7 +7,7 @@ from .window import sliding_window
 
 def build_dataset(csv_path, fs, label):
     df = pd.read_csv(csv_path)
-    ppg = df["PPG"].values
+    ppg = df["ppg"].values
 
     ppg_filt = bandpass_filter(ppg, fs)
     windows = sliding_window(ppg_filt, fs)
